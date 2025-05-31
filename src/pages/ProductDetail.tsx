@@ -326,7 +326,7 @@ const ProductDetail = () => {
   };
 
   // Get available colors for this product
-  const availableColors = colorOptions.filter(color => 
+  const availableColors = colorOptions.filter(color =>
     product.colors.includes(color.value)
   );
 
@@ -346,16 +346,15 @@ const ProductDetail = () => {
           {/* Image Gallery */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div 
+            <div
               className="aspect-[3/4] overflow-hidden rounded-2xl shadow-lg cursor-zoom-in relative"
               onClick={() => setIsZoomed(!isZoomed)}
             >
               <img
                 src={`https://images.unsplash.com/${product.images[currentImageIndex]}?w=600&h=800&fit=crop`}
                 alt={product.name}
-                className={`w-full h-full object-cover transition-transform duration-300 ${
-                  isZoomed ? 'scale-150' : 'scale-100'
-                }`}
+                className={`w-full h-full object-cover transition-transform duration-300 ${isZoomed ? 'scale-150' : 'scale-100'
+                  }`}
               />
               {isZoomed && (
                 <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm rounded-full p-2">
@@ -370,11 +369,10 @@ const ProductDetail = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`aspect-square w-20 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                    currentImageIndex === index
+                  className={`aspect-square w-20 rounded-lg overflow-hidden border-2 transition-all duration-200 ${currentImageIndex === index
                       ? 'border-terracotta-500 shadow-lg'
                       : 'border-transparent hover:border-sage-300'
-                  }`}
+                    }`}
                 >
                   <img
                     src={`https://images.unsplash.com/${image}?w=200&h=200&fit=crop`}
@@ -408,11 +406,10 @@ const ProductDetail = () => {
                   <button
                     key={color.value}
                     onClick={() => setSelectedColor(color.value)}
-                    className={`relative w-12 h-12 rounded-full border-2 transition-all duration-200 ${
-                      selectedColor === color.value
+                    className={`relative w-12 h-12 rounded-full border-2 transition-all duration-200 ${selectedColor === color.value
                         ? 'border-earth-800 scale-110'
                         : 'border-earth-300 hover:border-earth-500'
-                    }`}
+                      }`}
                   >
                     <div className={`w-full h-full rounded-full ${color.color}`}></div>
                     {selectedColor === color.value && (
@@ -463,7 +460,7 @@ const ProductDetail = () => {
                   </DialogContent>
                 </Dialog>
               </div>
-              
+
               <Select value={selectedSize} onValueChange={setSelectedSize}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select size" />
